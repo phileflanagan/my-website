@@ -18,7 +18,6 @@
 	  $(window).on('mousewheel', function foo(e) {
 	    $this = $(this);
 	    var mousemove = e.originalEvent.wheelDeltaY;
-	    console.log(mousemove);
 	    if (mousemove < 0) {
 	      downFn();
 					    $this.off('mousewheel');
