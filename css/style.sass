@@ -200,11 +200,25 @@ div[class*='section']
 		h2
 			margin: 10px
 
-@media handheld, screen and (max-width: 768px)
+@media handheld, screen and (max-width: 768px) and (min-width: 568px)
+	p
+		size: 4vw
 	.up, .down
 		font-size: 5vw
+		position: absolute
+		right: 20px
+		text-align: right
+
+
+
+@media handheld, screen and (max-width: 567px)
 	p
-		size: 2vw
+		font-size: 2.2vw
+	.up, .down
+		font-size: 5vw
+		position: absolute
+		right: 20px
+		text-align: right
 	.section3
 		.thumbgrid
 			flex-direction: column
@@ -212,9 +226,18 @@ div[class*='section']
 				width: 45vw
 				height: 38vw
 				margin: 1vw
+			.thumb-bottom
+				p
+					font-size: 2.2vw
 	.section5
+		h2
+			font-size: 7vw
 		.content
 			flex-direction: column
 			text-align: center
 			img
 				margin: 0 auto
+			h3
+				font-size: 5vw
+			p
+				font-size: 3vw
