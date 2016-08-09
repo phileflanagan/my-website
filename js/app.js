@@ -1,7 +1,7 @@
 	$(function() {
 	  // Ranks for Skills in Section 2
 	  var skills = [
-	    10, 10, 9, 8, 8, 6, 6, 4, 4, 10
+	    10, 10, 10, 8, 8, 6, 6, 6, 4, 10
 	  ]
 
 	  // Set Skill's Rank
@@ -15,20 +15,32 @@
 	  $('.up').click(upFn);
 
 	  // Handle Scroll Event
+		var move = true;
 	  $(window).on('mousewheel', function foo(e) {
 	    $this = $(this);
 	    var mousemove = e.originalEvent.wheelDeltaY;
-	    if (mousemove < 0) {
-	      downFn();
-					    $this.off('mousewheel');
-	    } else if (mousemove > 0) {
-	      upFn();
-					    $this.off('mousewheel');
-	    }
+			console.log("move", move);
+	    if (mousemove < 0 && move) {
+        move = false;
+				if (section === 6) return;
+		    if (section < 7) section += 1;
+		    $('.section' + section).css({
+		      'transform': 'translate(0,0)'
+		    })
+		    arrows();
 
+				console.log("move", move);
+		    // $this.off('mousewheel');
+	    } else if (mousemove > 0 && move) {
+        move = false;
+				upFn();
+
+		    // $this.off('mousewheel');
+	    }
 	    $.data(this, 'timer', setTimeout(function() {
 	    	move = true;
-	    	$this.on('mousewheel', foo);
+				console.log("inside data");
+				// $this.on('mousewheel', foo);
 	    }, 300));
 
 	  });

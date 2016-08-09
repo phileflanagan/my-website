@@ -71,6 +71,19 @@ div[class*='section']
 .section1
 	background-color: $yellow
 	flex-direction: column
+	a
+		text-align: center
+		font-size: 24px
+		font-weight: normal
+		color: white
+		margin-top: 50px
+		border-left: 2px solid white
+		border-right: 2px solid white
+		padding: 0 20px
+		transition: border 0.2s ease-in-out
+		&:hover
+			border-left: 100px solid white
+			border-right: 100px solid white
 
 // Section 2
 .section2
@@ -190,8 +203,8 @@ div[class*='section']
 	background-image: url('../img/thumb/twitter-quote-thumb.jpg')
 #recipeThumb
 	background-image: url('../img/thumb/recipe-thumb.jpg')
-#tutorialThumb
-	background-image: url('../img/thumb/tut-thumb.jpg')
+#shoutThumb
+	background-image: url('../img/thumb/shout-thumb.jpg')
 
 // Mobile Responsive Code
 @media handheld, screen and (max-width: 1100px)
@@ -201,6 +214,9 @@ div[class*='section']
 			margin: 10px
 
 @media handheld, screen and (max-width: 768px) and (min-width: 568px)
+	.section1
+		a
+			font-size: 18px
 	p
 		size: 4vw
 	.up, .down
@@ -212,6 +228,9 @@ div[class*='section']
 
 
 @media handheld, screen and (max-width: 567px)
+	.section1
+		a
+			font-size: 14px
 	p
 		font-size: 2.2vw
 	.up, .down
